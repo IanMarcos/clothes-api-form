@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario para consumir API de tienda de ropa">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+
+  <title>Clothes API</title>
+</head>
+<body>
+  <main class="main-container">
+    <div class="form-container">
+      <form>
+        <div class="input-container">
+          <label for="form-name">Nombre<span class="required-field">*</span></label>
+          <input name="name" id="form-name" type="text" maxlength="50">
+        </div>
+        <div class="input-container">
+          <label for="form-desc">Descripción</label>
+          <input name="description" id="form-desc" type="text" maxlength="100">
+        </div>
+        <div class="input-container">
+          <label for="form-price">Precio<span class="required-field">*</span></label>
+          <input name="price" id="form-price" type="text">
+        </div>
+        <div class="input-container">
+          <label for="form-discount">Descuento</label>
+          <input name="discount" id="form-discount" type="text">  
+        </div>
+        <div class="input-container">
+          <label for="form-country">Pais<span class="required-field">*</span></label>
+          <input name="country" id="form-country" type="text" placeholder="Ej: co, mx, us" maxlength="2">  
+        </div>
+        <div class="input-container">
+          <label for="form-prodImg" title="Al menos dos imagenes son necesarias">Imagen<span class="required-field">*</span></label>
+          <input name="prodImg" id="form-prodImg" type="file">
+        </div>
+        <div class="form-btns">
+          <button type="reset" class="clear-form">Limpiar</button>
+          <button type="submit" class="submit">Guardar producto</button>
+        </div>
+      </form>
+    </div>
+    <div class="json-response">
+      <textarea name="response" cols="30" rows="10"></textarea>
+    </div>
+  </main>
+</body>
+</html>
