@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
 
   <title>Clothes API</title>
+
+  <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
   <main class="main-container">
@@ -37,12 +39,12 @@
           <input name="country" id="form-country" type="text" placeholder="Ej: co, mx, us" maxlength="2">  
         </div>
         <div class="input-container">
-          <label for="form-prodImg" title="Al menos dos imagenes son necesarias">Imagen<span class="required-field">*</span></label>
-          <input name="prodImg" id="form-prodImg" type="file">
+          <label for="form-prodImg" title="Al menos dos imagenes son necesarias">Imagenes<span class="required-field">*</span></label>
+          <input name="prodImg" id="form-prodImg" type="file" multiple>
         </div>
         <div class="form-btns">
-          <button type="reset" class="clear-form">Limpiar</button>
-          <button type="submit" class="submit">Guardar producto</button>
+          <button type="submit" class="btn primary-btn">Crear producto</button>
+          <button type="reset" class="btn secondary-btn">Limpiar</button>
         </div>
       </form>
     </div>

@@ -5,19 +5,26 @@
 }
 
 html, body {
-  width: 100vw;
+  width: max(320px, 100vw);
   font-size: 18px;
   background: rgb(250, 250, 250);
   font-family: 'Montserrat', sans-serif;
 }
 
-main {
+.json-response {
+  width: 100%;
+  border: solid black 1px;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
   border: solid red 1px;
 }
 
 .form-container {
-  border: solid blue 1px;
   padding: 1.2rem 1ch;
+  width: clamp(320px, 50%, 1000px);
 }
 
 .form-container label{
@@ -28,46 +35,77 @@ main {
   border-style: solid;
   border-radius: 0.3rem;
   height: 1.3rem;
-  width: 70%;
+  width: 100%;
+}
+
+.form-container input[type="file"] {
+  cursor: pointer;
 }
 
 .input-container {
   padding: 0.6rem 0;
 }
 
+
 .form-btns {
-  /* border: solid green 1px; */
   margin: 0.8rem;
   display: flex;
   justify-content: space-around;
 }
 
-.form-btns button {
-  cursor: pointer;
-  width: 5rem;
-  padding: 0.35rem;
+.btn {
   border: none;
   border-radius: 0.3rem;
   color: rgb(250, 250, 250);
-  background: rgb(42, 100, 224);
+  cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
   transition: background 500ms;
+  padding: 0.35rem;
 }
 
-.form-btns button:hover {
+.primary-btn {
+  background: rgb(42, 100, 224);
+  font-size: 0.75rem;
+  width: 5rem;
+}
+
+.primary-btn:hover {
   background: rgb(16, 60, 153);
 }
 
-.form-btns .clear-form {
-  background: rgb(112, 112, 112);
+.secondary-btn {
+  background: rgb(90, 90, 90);
+  font-size: 0.75rem;
+  width: 5rem;
 }
 
-.form-btns .clear-form:hover {
+.secondary-btn:hover {
   background: rgb(71, 71, 71);
+}
+
+.upload-btn {
+  font-size: 0.6rem;
 }
 
 .required-field {
   color: rgb(212, 25, 25);
   font-size: 1.1rem;
+}
+
+@media only screen and (min-width: 650px) {
+
+  .json-response {
+    width: 50%;
+  }
+
+  .form-container form{
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr/ 42% 42%;
+    column-gap: 0.7rem;
+    justify-content: space-around;
+  }
+
+  .form-btns {
+    grid-column: 1 / 3;
+  }
 }
