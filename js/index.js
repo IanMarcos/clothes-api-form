@@ -15,7 +15,6 @@ async function handleGetBtn(e) {
   e.stopPropagation();
   const productJSON = await getProducts();
   displayJSONResponse(productJSON);
-
 }
 
 async function createProduct() {
@@ -45,7 +44,6 @@ async function getProducts() {
 
 function displayJSONResponse(json) {
   if( json ){
-    console.log(json);
     if( json.status && json.status === 200 || json.status === 201){
       responseBlock.classList.add('success-shadow');
     } else {
