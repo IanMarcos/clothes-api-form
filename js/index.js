@@ -1,45 +1,56 @@
 // addEventListener('DOMContentLoaded', loadSelectors);
-addEventListener('submit',handleSubmit);
+document.querySelector('#form-submit').addEventListener('click',handleSubmit);
+document.querySelector('.get-btn').addEventListener('click', handleGetBtn);
 
 const responseBlock = document.querySelector('.response-block');
 const jsonCode = document.querySelector('#json-response');
-/**In case field validation is required
-  const formName = document.querySelector('#form-name');
-  const formDescription = document.querySelector('#form-desc');
-  const formPrice = document.querySelector('#form-price');
-  const formDiscount = document.querySelector('#form-discount');
-  const formCountry = document.querySelector('#form-country');
-  const formImages = document.querySelector('#form-prodImg');
-*/
 
 async function handleSubmit(e) {
   e.preventDefault();
   const productJSON = await createProduct();
-  if( productJSON ){
-    productJSON.results.status === 201 ? responseBlock.classList.add('success-shadow') : responseBlock.classList.add('error-shadow');
-    jsonCode.innerText = JSON.stringify(productJSON, null, 2);
-  }
+  displayJSONResponse(productJSON);
+}
+
+async function handleGetBtn(e) {
+  e.stopPropagation();
+  const productJSON = await getProducts();
+  displayJSONResponse(productJSON);
+
 }
 
 async function createProduct() {
   try {
     const response = await fetch('https://clothes-api-ian.herokuapp.com/api/products/new', {
       method: "POST",
-      // headers: {
-      //   "Content-Type": "form-data"
-      // },
       body: new FormData(document.querySelector('#product-form'))
     });
 
     const results = await response.json();
-    
-    if(results.status === 500){
-      console.log('Server Error');
-      return undefined;
-    }
 
     return results;
   } catch (error) {
       return undefined;
+  }
+}
+
+async function getProducts() {
+  try {
+    const response = await fetch('https://clothes-api-ian.herokuapp.com/api/products/all');
+    const results = await response.json();
+    return results;
+  } catch (error) {
+      return undefined;
+  }
+}
+
+function displayJSONResponse(json) {
+  if( json ){
+    console.log(json);
+    if( json.status && json.status === 200 || json.status === 201){
+      responseBlock.classList.add('success-shadow');
+    } else {
+      responseBlock.classList.add('error-shadow');
+    }
+    jsonCode.innerText = JSON.stringify(json, null, 2);
   }
 }
