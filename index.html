@@ -12,12 +12,13 @@
 
   <title>Clothes API</title>
 
-  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/index.js" defer></script>
 </head>
 <body>
+  <h1>Clothes API</h1>
   <main class="main-container">
     <div class="form-container">
-      <form>
+      <form id="product-form">
         <div class="input-container">
           <label for="form-name">Nombre<span class="required-field">*</span></label>
           <input name="name" id="form-name" type="text" maxlength="50">
@@ -48,8 +49,12 @@
         </div>
       </form>
     </div>
-    <div class="json-response">
-      <textarea name="response" cols="30" rows="10"></textarea>
+    <div class="response-block">
+      <h2>Respuesta</h2>
+      <pre><code id="json-response">
+No fieds will be validated so the different responses can be displayed.
+Los campos no serán validados para poder mostrar las diferentes respuestas.
+      </code></pre>
     </div>
   </main>
 </body>

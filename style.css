@@ -11,15 +11,43 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.json-response {
+body {
+  padding-top: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.response-block {
+  background: rgb(241, 241, 241);
+  box-shadow: 0 4px 0.3rem rgb(71, 71, 71);
+  border: solid rgb(126, 126, 126) 1px;
+  border-radius: 0.3rem;
+  margin: 1.2rem 1ch;
+  padding: 0.8rem 1ch;
   width: 100%;
-  border: solid black 1px;
+  overflow: scroll;
+}
+
+.success-shadow {
+  border: solid rgb(67, 196, 41) 1px;
+  box-shadow: 0 4px 0.3rem rgb(31, 128, 11);
+}
+
+.error-shadow {
+  border: solid rgb(214, 55, 55) 1px;
+  box-shadow: 0 4px 0.3rem rgb(151, 26, 17);
+}
+
+.response-block code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
 }
 
 .main-container {
   display: flex;
   flex-wrap: wrap;
-  border: solid red 1px;
 }
 
 .form-container {
@@ -94,8 +122,12 @@ html, body {
 
 @media only screen and (min-width: 650px) {
 
-  .json-response {
+  .response-block {
     width: 50%;
+  }
+
+  .main-container {
+    flex-wrap: nowrap;
   }
 
   .form-container form{
