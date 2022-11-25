@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap"
+    rel="stylesheet">
 
   <title>Clothes API</title>
 
+  <script type="text/javascript" src="js/api.js" defer></script>
   <script type="text/javascript" src="js/index.js" defer></script>
 </head>
+
 <body>
   <h1>Clothes API</h1>
   <main class="main-container">
@@ -33,18 +37,19 @@
         </div>
         <div class="input-container">
           <label for="form-discount">Descuento</label>
-          <input name="discount" id="form-discount" type="text">  
+          <input name="discount" id="form-discount" type="text">
         </div>
         <div class="input-container">
           <label for="form-country">Pais<span class="required-field">*</span></label>
-          <input name="country" id="form-country" type="text" placeholder="Ej: co, mx, us" maxlength="2">  
+          <input name="country" id="form-country" type="text" placeholder="Ej: co, mx, us" maxlength="2">
         </div>
         <div class="input-container">
-          <label for="form-prodImg" title="Al menos dos imagenes son necesarias">Imagenes<span class="required-field">*</span></label>
+          <label for="form-prodImg" title="Al menos dos imagenes son necesarias">Imagenes<span
+              class="required-field">*</span></label>
           <input name="prodImg" id="form-prodImg" type="file" multiple>
         </div>
         <div class="form-btns">
-          <button id ="form-submit" type="submit" class="btn primary-btn">Crear producto</button>
+          <button id="form-submit" type="submit" class="btn primary-btn">Crear producto</button>
           <button type="reset" class="btn secondary-btn">Limpiar</button>
         </div>
         <div class="get-btn-cont">
@@ -61,4 +66,5 @@ Los campos no serán validados para poder mostrar las diferentes respuestas.
     </div>
   </main>
 </body>
+
 </html>

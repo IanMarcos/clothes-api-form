@@ -1,4 +1,3 @@
-// addEventListener('DOMContentLoaded', loadSelectors);
 document.querySelector('#form-submit').addEventListener('click',handleSubmit);
 document.querySelector('.get-btn').addEventListener('click', handleGetBtn);
 
@@ -19,7 +18,7 @@ async function handleGetBtn(e) {
 
 async function createProduct() {
   try {
-    const response = await fetch('https://clothes-api-ian.herokuapp.com/api/products/new', {
+    const response = await fetch(`${APIURL}/api/products/new`, {
       method: "POST",
       body: new FormData(document.querySelector('#product-form'))
     });
@@ -28,17 +27,17 @@ async function createProduct() {
 
     return results;
   } catch (error) {
-      return undefined;
+    return undefined;
   }
 }
 
 async function getProducts() {
   try {
-    const response = await fetch('https://clothes-api-ian.herokuapp.com/api/products/all');
+    const response = await fetch(`${APIURL}/api/products/all`);
     const results = await response.json();
     return results;
   } catch (error) {
-      return undefined;
+    return undefined;
   }
 }
 
